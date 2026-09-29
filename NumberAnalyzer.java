@@ -1,7 +1,9 @@
 import java.util.Scanner;
 
 public class NumberAnalyzer {
-    public static void processArray(int[] arr) {
+
+    // Feature Focus: Dedicated sorting logic
+    public static void sortArray(int[] arr) {
         int n = arr.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
@@ -12,28 +14,19 @@ public class NumberAnalyzer {
                 }
             }
         }
-        System.out.print("\nSorted Array: [ ");
-        for (int i = 0; i < n; i++) {
-            System.out.print(arr[i] + (i == n - 1 ? "" : ", "));
-        }
-        System.out.println(" ]");
-
-        int secondLowest = arr[1];
-        int secondHighest = arr[n - 2];
-
-        System.out.println("Second Lowest Number: " + secondLowest);
-        System.out.println("Second Highest Number: " + secondHighest);
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[] numbers = new int[5];
-        System.out.println("Please enter 5 different numbers:");
+
+        System.out.println("Sorting Logic Branch - Enter 5 numbers:");
         for (int i = 0; i < 5; i++) {
-            System.out.print("Number " + (i + 1) + ": ");
             numbers[i] = scanner.nextInt();
         }
         scanner.close();
-        processArray(numbers);
+
+        sortArray(numbers);
+        System.out.println("Array sorted successfully using Bubble Sort.");
     }
 }
